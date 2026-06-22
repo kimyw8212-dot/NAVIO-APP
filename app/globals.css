@@ -3,6 +3,40 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* ── NAVIO 디자인 토큰 ──────────────────────────────── */
+  /* 브랜드 컬러: 연보라 포인트 + 화이트 베이스 */
+  --navio-bg: #fafbfd;
+  --navio-surface: #ffffff;
+  --navio-accent: #a191f8;
+  --navio-accent-strong: #8f7bef;
+  --navio-accent-soft: #f3f0ff;
+  --navio-accent-line: #e6e1ff;
+
+  /* 텍스트 (회색 톤 통일) */
+  --navio-text: #1c1c1e;
+  --navio-text-muted: #767685;
+  --navio-text-faint: #a3a3b0;
+
+  /* 경계선 / 구분선 */
+  --navio-border: #ececf5;
+  --navio-divider: #f1f0f8;
+
+  /* 라운드 스케일 */
+  --navio-radius-sm: 14px;
+  --navio-radius-md: 20px;
+  --navio-radius-lg: 28px;
+  --navio-radius-xl: 36px;
+
+  /* 소프트 섀도우 스케일 (프리미엄/Apple Maps 톤) */
+  --navio-shadow-sm: 0 2px 10px rgba(140, 130, 200, 0.08);
+  --navio-shadow-md: 0 8px 24px rgba(140, 130, 200, 0.14);
+  --navio-shadow-lg: 0 16px 44px rgba(140, 130, 200, 0.18);
+
+  /* Glassmorphism */
+  --navio-glass-bg: rgba(255, 255, 255, 0.62);
+  --navio-glass-border: rgba(255, 255, 255, 0.55);
+  --navio-glass-blur: 22px;
 }
 
 @theme inline {
@@ -10,17 +44,57 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-navio-bg: var(--navio-bg);
+  --color-navio-surface: var(--navio-surface);
+  --color-navio-accent: var(--navio-accent);
+  --color-navio-accent-strong: var(--navio-accent-strong);
+  --color-navio-accent-soft: var(--navio-accent-soft);
+  --color-navio-text: var(--navio-text);
+  --color-navio-text-muted: var(--navio-text-muted);
+  --color-navio-text-faint: var(--navio-text-faint);
+  --color-navio-border: var(--navio-border);
+
+  --radius-navio-sm: var(--navio-radius-sm);
+  --radius-navio-md: var(--navio-radius-md);
+  --radius-navio-lg: var(--navio-radius-lg);
+  --radius-navio-xl: var(--navio-radius-xl);
+
+  --shadow-navio-sm: var(--navio-shadow-sm);
+  --shadow-navio-md: var(--navio-shadow-md);
+  --shadow-navio-lg: var(--navio-shadow-lg);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 카드 위에 올릴 때 쓰는 글래스모피즘 표면 — 지도/캐릭터 위 플로팅 칩, 검색바 등 */
+.navio-glass {
+  background: var(--navio-glass-bg);
+  border: 1px solid var(--navio-glass-border);
+  backdrop-filter: blur(var(--navio-glass-blur));
+  -webkit-backdrop-filter: blur(var(--navio-glass-blur));
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 999px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }

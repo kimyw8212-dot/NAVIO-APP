@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# design reference screenshots (not part of the app)
+/벤치마킹/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
